@@ -1,0 +1,183 @@
+\documentclass[a4paper, 12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{soul}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{scrpage2}
+\usepackage{listings,xcolor,color}
+
+%Seitenrand Einstellen
+\usepackage[paper=a4paper,left=35mm,right=25mm,top=25mm,bottom=25 mm]{geometry}
+% andere Schriftfont und Größe ändern
+%\renewcommand{\familydefault}{\sfdefault}{\large}
+%\usepackage{helvet}
+%\large
+
+% bibtex
+
+%\usepackage{cite}
+
+\usepackage[style=alphabetic,maxalphanames=1]{biblatex}
+\addbibresource{thesis_bibtex.bib}
+
+\renewcommand*{\labelalphaothers}{}
+
+\DeclareLabelalphaTemplate{
+  \labelelement{
+    \field[final]{shorthand}
+    \field{labelname}
+    \field{label}
+  }
+  \labelelement{
+    \literal{,\addhighpenspace}
+  }
+  \labelelement{
+    \field{year}
+  }
+}
+
+%\usepackage{typearea}
+%\usepackage[style=authortitle-icomp]{biblatex}
+%\usepackage[babel,german=guillemets]{csquotes}
+
+
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+
+%opening
+\title{Praxisbericht}
+\author{Gennadi Heimann}
+\date{20. September 2014}
+
+\lstdefinestyle{bash}{
+  language=sh,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mymauve},
+  breaklines=true,
+  numbers=left,
+  basicstyle=\scriptsize\ttfamily,
+  showspaces=false,
+  frame=shadowbox,
+  xleftmargin=0.5cm,
+  tabsize=3
+}
+
+\lstdefinestyle{java} {
+  language=java,
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  numbers=left,
+  tabsize=3,
+  basicstyle=\small\ttfamily,
+  showspaces=false,
+  frame=shadowbox,
+  xleftmargin=0.5cm,
+}
+\lstdefinestyle{sql} {
+  language=SQL,
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  numbers=left,
+  tabsize=3,
+  basicstyle=\small\ttfamily,
+  showspaces=false,
+  frame=shadowbox,
+  xleftmargin=0.5cm
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\pagebreak
+
+\pagestyle{scrheadings}
+\chead{\includegraphics[scale=0.15]{img/doubleSlash_logo.jpg}}
+\ohead{\today}
+\ifoot{Gennadi Heimann}
+\ofoot{\pagemark}
+\setheadsepline{0.7pt}
+\setfootsepline{0.7pt}
+
+\tableofcontents
+
+\pagebreak
+
+\listoffigures
+
+\pagebreak
+
+\ihead{Headtitle}
+
+\section{Beispiel}
+Bla sagte Nobody (\cite[22]{felfernig1999intelligente}).
+  
+  \subsection{Eigene Produkte}
+    
+    \begin{itemize}
+      \item \textbf{Beispiel}\footnote{url}
+      \begin{itemize}
+        \item
+        \item 
+      \end{itemize}
+    \end{itemize}
+  
+    \subsubsection{Beispiel}
+  
+
+\pagebreak
+\ihead{Headtitle}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.18]{./img/promt_verp.JPG}
+  \caption {Caption}
+\end{figure}
+   
+  \begin{lstlisting}[style=bash]
+echo "#INFO# -> Sleeping for 10 seconds."
+  \end{lstlisting}
+  
+  \emph{Kursive Beispiel}
+
+\pagebreak
+\ihead{Abbildungsverzeichnis}
+
+
+
+\newpage
+\ihead{Tagesberichte}
+
+\begin{center}
+  \begin{tabular}{|l|l|p{7cm}|}
+    \hline
+    Lf. Nr. & Wochentag, Datum & Tätigkeit\\
+    \hline\hline
+    1 & Mo. 3. März 2014 & Begrüßung. Fach- und GUI- Konzept lesen.\\
+    \hline
+    2 & Di. 4. März 2014 & Fach- und GUI- Konzept lesen.\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\bibliography{thesis_bibtex}{}
+%\bibliographystyle{abbrv}
+
+%\printbibliography
+
+\end{document}

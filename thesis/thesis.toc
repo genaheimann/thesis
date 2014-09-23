@@ -1,0 +1,4 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Beispiel}{4}
+\contentsline {subsection}{\numberline {1.1}Eigene Produkte}{4}
+\contentsline {subsubsection}{\numberline {1.1.1}Beispiel}{4}
